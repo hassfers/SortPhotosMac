@@ -1,0 +1,602 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1C319F424F6C314008DF177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C319F324F6C314008DF177 /* AppDelegate.swift */; };
+		C1C319F624F6C314008DF177 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C319F524F6C314008DF177 /* ContentView.swift */; };
+		C1C319F824F6C316008DF177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C319F724F6C316008DF177 /* Assets.xcassets */; };
+		C1C319FB24F6C316008DF177 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C319FA24F6C316008DF177 /* Preview Assets.xcassets */; };
+		C1C319FE24F6C316008DF177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C319FC24F6C316008DF177 /* Main.storyboard */; };
+		C1C31A0A24F6C316008DF177 /* sortPhotoMacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C31A0924F6C316008DF177 /* sortPhotoMacTests.swift */; };
+		C1C31A1524F6C316008DF177 /* sortPhotoMacUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C31A1424F6C316008DF177 /* sortPhotoMacUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C1C31A0624F6C316008DF177 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1C319E824F6C314008DF177 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1C319EF24F6C314008DF177;
+			remoteInfo = sortPhotoMac;
+		};
+		C1C31A1124F6C316008DF177 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1C319E824F6C314008DF177 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1C319EF24F6C314008DF177;
+			remoteInfo = sortPhotoMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C1C319F024F6C314008DF177 /* sortPhotoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sortPhotoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C319F324F6C314008DF177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C1C319F524F6C314008DF177 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C1C319F724F6C316008DF177 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1C319FA24F6C316008DF177 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C1C319FD24F6C316008DF177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1C319FF24F6C316008DF177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1C31A0024F6C316008DF177 /* sortPhotoMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sortPhotoMac.entitlements; sourceTree = "<group>"; };
+		C1C31A0524F6C316008DF177 /* sortPhotoMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sortPhotoMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C31A0924F6C316008DF177 /* sortPhotoMacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortPhotoMacTests.swift; sourceTree = "<group>"; };
+		C1C31A0B24F6C316008DF177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1C31A1024F6C316008DF177 /* sortPhotoMacUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sortPhotoMacUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C31A1424F6C316008DF177 /* sortPhotoMacUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sortPhotoMacUITests.swift; sourceTree = "<group>"; };
+		C1C31A1624F6C316008DF177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1C319ED24F6C314008DF177 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C31A0224F6C316008DF177 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C31A0D24F6C316008DF177 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1C319E724F6C314008DF177 = {
+			isa = PBXGroup;
+			children = (
+				C1C319F224F6C314008DF177 /* sortPhotoMac */,
+				C1C31A0824F6C316008DF177 /* sortPhotoMacTests */,
+				C1C31A1324F6C316008DF177 /* sortPhotoMacUITests */,
+				C1C319F124F6C314008DF177 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1C319F124F6C314008DF177 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1C319F024F6C314008DF177 /* sortPhotoMac.app */,
+				C1C31A0524F6C316008DF177 /* sortPhotoMacTests.xctest */,
+				C1C31A1024F6C316008DF177 /* sortPhotoMacUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1C319F224F6C314008DF177 /* sortPhotoMac */ = {
+			isa = PBXGroup;
+			children = (
+				C1C319F324F6C314008DF177 /* AppDelegate.swift */,
+				C1C319F524F6C314008DF177 /* ContentView.swift */,
+				C1C319F724F6C316008DF177 /* Assets.xcassets */,
+				C1C319FC24F6C316008DF177 /* Main.storyboard */,
+				C1C319FF24F6C316008DF177 /* Info.plist */,
+				C1C31A0024F6C316008DF177 /* sortPhotoMac.entitlements */,
+				C1C319F924F6C316008DF177 /* Preview Content */,
+			);
+			path = sortPhotoMac;
+			sourceTree = "<group>";
+		};
+		C1C319F924F6C316008DF177 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C1C319FA24F6C316008DF177 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C1C31A0824F6C316008DF177 /* sortPhotoMacTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1C31A0924F6C316008DF177 /* sortPhotoMacTests.swift */,
+				C1C31A0B24F6C316008DF177 /* Info.plist */,
+			);
+			path = sortPhotoMacTests;
+			sourceTree = "<group>";
+		};
+		C1C31A1324F6C316008DF177 /* sortPhotoMacUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C1C31A1424F6C316008DF177 /* sortPhotoMacUITests.swift */,
+				C1C31A1624F6C316008DF177 /* Info.plist */,
+			);
+			path = sortPhotoMacUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1C319EF24F6C314008DF177 /* sortPhotoMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C31A1924F6C316008DF177 /* Build configuration list for PBXNativeTarget "sortPhotoMac" */;
+			buildPhases = (
+				C1C319EC24F6C314008DF177 /* Sources */,
+				C1C319ED24F6C314008DF177 /* Frameworks */,
+				C1C319EE24F6C314008DF177 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sortPhotoMac;
+			productName = sortPhotoMac;
+			productReference = C1C319F024F6C314008DF177 /* sortPhotoMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C1C31A0424F6C316008DF177 /* sortPhotoMacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C31A1C24F6C316008DF177 /* Build configuration list for PBXNativeTarget "sortPhotoMacTests" */;
+			buildPhases = (
+				C1C31A0124F6C316008DF177 /* Sources */,
+				C1C31A0224F6C316008DF177 /* Frameworks */,
+				C1C31A0324F6C316008DF177 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1C31A0724F6C316008DF177 /* PBXTargetDependency */,
+			);
+			name = sortPhotoMacTests;
+			productName = sortPhotoMacTests;
+			productReference = C1C31A0524F6C316008DF177 /* sortPhotoMacTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C1C31A0F24F6C316008DF177 /* sortPhotoMacUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C31A1F24F6C316008DF177 /* Build configuration list for PBXNativeTarget "sortPhotoMacUITests" */;
+			buildPhases = (
+				C1C31A0C24F6C316008DF177 /* Sources */,
+				C1C31A0D24F6C316008DF177 /* Frameworks */,
+				C1C31A0E24F6C316008DF177 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1C31A1224F6C316008DF177 /* PBXTargetDependency */,
+			);
+			name = sortPhotoMacUITests;
+			productName = sortPhotoMacUITests;
+			productReference = C1C31A1024F6C316008DF177 /* sortPhotoMacUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1C319E824F6C314008DF177 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1160;
+				LastUpgradeCheck = 1160;
+				ORGANIZATIONNAME = "Stefan Haßferter";
+				TargetAttributes = {
+					C1C319EF24F6C314008DF177 = {
+						CreatedOnToolsVersion = 11.6;
+					};
+					C1C31A0424F6C316008DF177 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = C1C319EF24F6C314008DF177;
+					};
+					C1C31A0F24F6C316008DF177 = {
+						CreatedOnToolsVersion = 11.6;
+						TestTargetID = C1C319EF24F6C314008DF177;
+					};
+				};
+			};
+			buildConfigurationList = C1C319EB24F6C314008DF177 /* Build configuration list for PBXProject "sortPhotoMac" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1C319E724F6C314008DF177;
+			productRefGroup = C1C319F124F6C314008DF177 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1C319EF24F6C314008DF177 /* sortPhotoMac */,
+				C1C31A0424F6C316008DF177 /* sortPhotoMacTests */,
+				C1C31A0F24F6C316008DF177 /* sortPhotoMacUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1C319EE24F6C314008DF177 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C319FE24F6C316008DF177 /* Main.storyboard in Resources */,
+				C1C319FB24F6C316008DF177 /* Preview Assets.xcassets in Resources */,
+				C1C319F824F6C316008DF177 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C31A0324F6C316008DF177 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C31A0E24F6C316008DF177 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1C319EC24F6C314008DF177 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C319F624F6C314008DF177 /* ContentView.swift in Sources */,
+				C1C319F424F6C314008DF177 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C31A0124F6C316008DF177 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C31A0A24F6C316008DF177 /* sortPhotoMacTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C31A0C24F6C316008DF177 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C31A1524F6C316008DF177 /* sortPhotoMacUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C1C31A0724F6C316008DF177 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1C319EF24F6C314008DF177 /* sortPhotoMac */;
+			targetProxy = C1C31A0624F6C316008DF177 /* PBXContainerItemProxy */;
+		};
+		C1C31A1224F6C316008DF177 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1C319EF24F6C314008DF177 /* sortPhotoMac */;
+			targetProxy = C1C31A1124F6C316008DF177 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C1C319FC24F6C316008DF177 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1C319FD24F6C316008DF177 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C1C31A1724F6C316008DF177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C1C31A1824F6C316008DF177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C1C31A1A24F6C316008DF177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = sortPhotoMac/sortPhotoMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"sortPhotoMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 5WPT3P86T4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = sortPhotoMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = de.sth.sortPhotoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C1C31A1B24F6C316008DF177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = sortPhotoMac/sortPhotoMac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"sortPhotoMac/Preview Content\"";
+				DEVELOPMENT_TEAM = 5WPT3P86T4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = sortPhotoMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = de.sth.sortPhotoMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C1C31A1D24F6C316008DF177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5WPT3P86T4;
+				INFOPLIST_FILE = sortPhotoMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = de.sth.sortPhotoMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sortPhotoMac.app/Contents/MacOS/sortPhotoMac";
+			};
+			name = Debug;
+		};
+		C1C31A1E24F6C316008DF177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5WPT3P86T4;
+				INFOPLIST_FILE = sortPhotoMacTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = de.sth.sortPhotoMacTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sortPhotoMac.app/Contents/MacOS/sortPhotoMac";
+			};
+			name = Release;
+		};
+		C1C31A2024F6C316008DF177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5WPT3P86T4;
+				INFOPLIST_FILE = sortPhotoMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.sth.sortPhotoMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = sortPhotoMac;
+			};
+			name = Debug;
+		};
+		C1C31A2124F6C316008DF177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 5WPT3P86T4;
+				INFOPLIST_FILE = sortPhotoMacUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = de.sth.sortPhotoMacUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = sortPhotoMac;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1C319EB24F6C314008DF177 /* Build configuration list for PBXProject "sortPhotoMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C31A1724F6C316008DF177 /* Debug */,
+				C1C31A1824F6C316008DF177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1C31A1924F6C316008DF177 /* Build configuration list for PBXNativeTarget "sortPhotoMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C31A1A24F6C316008DF177 /* Debug */,
+				C1C31A1B24F6C316008DF177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1C31A1C24F6C316008DF177 /* Build configuration list for PBXNativeTarget "sortPhotoMacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C31A1D24F6C316008DF177 /* Debug */,
+				C1C31A1E24F6C316008DF177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1C31A1F24F6C316008DF177 /* Build configuration list for PBXNativeTarget "sortPhotoMacUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C31A2024F6C316008DF177 /* Debug */,
+				C1C31A2124F6C316008DF177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C1C319E824F6C314008DF177 /* Project object */;
+}
