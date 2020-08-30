@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C152882024F969F900C7F85C /* SwiftyImageIO in Frameworks */ = {isa = PBXBuildFile; productRef = C152881F24F969F900C7F85C /* SwiftyImageIO */; };
+		C152882224FA54E200C7F85C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C152882124FA54E200C7F85C /* Photo.swift */; };
 		C1C319F424F6C314008DF177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C319F324F6C314008DF177 /* AppDelegate.swift */; };
 		C1C319F624F6C314008DF177 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C319F524F6C314008DF177 /* ContentView.swift */; };
 		C1C319F824F6C316008DF177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C319F724F6C316008DF177 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C152881E24F969EF00C7F85C /* SwiftyImageIO */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftyImageIO; path = ../SwiftyImageIO; sourceTree = "<group>"; };
+		C152882124FA54E200C7F85C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C1C319F024F6C314008DF177 /* sortPhotoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sortPhotoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C319F324F6C314008DF177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C319F524F6C314008DF177 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C152882024F969F900C7F85C /* SwiftyImageIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,13 +80,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C152881924F92A3F00C7F85C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C1C319E724F6C314008DF177 = {
 			isa = PBXGroup;
 			children = (
+				C152881E24F969EF00C7F85C /* SwiftyImageIO */,
 				C1C319F224F6C314008DF177 /* sortPhotoMac */,
 				C1C31A0824F6C316008DF177 /* sortPhotoMacTests */,
 				C1C31A1324F6C316008DF177 /* sortPhotoMacUITests */,
 				C1C319F124F6C314008DF177 /* Products */,
+				C152881924F92A3F00C7F85C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +114,7 @@
 			children = (
 				C1C319F324F6C314008DF177 /* AppDelegate.swift */,
 				C1C319F524F6C314008DF177 /* ContentView.swift */,
+				C152882124FA54E200C7F85C /* Photo.swift */,
 				C1C319F724F6C316008DF177 /* Assets.xcassets */,
 				C1C319FC24F6C316008DF177 /* Main.storyboard */,
 				C1C319FF24F6C316008DF177 /* Info.plist */,
@@ -151,6 +166,9 @@
 			dependencies = (
 			);
 			name = sortPhotoMac;
+			packageProductDependencies = (
+				C152881F24F969F900C7F85C /* SwiftyImageIO */,
+			);
 			productName = sortPhotoMac;
 			productReference = C1C319F024F6C314008DF177 /* sortPhotoMac.app */;
 			productType = "com.apple.product-type.application";
@@ -223,6 +241,8 @@
 				Base,
 			);
 			mainGroup = C1C319E724F6C314008DF177;
+			packageReferences = (
+			);
 			productRefGroup = C1C319F124F6C314008DF177 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -266,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C152882224FA54E200C7F85C /* Photo.swift in Sources */,
 				C1C319F624F6C314008DF177 /* ContentView.swift in Sources */,
 				C1C319F424F6C314008DF177 /* AppDelegate.swift in Sources */,
 			);
@@ -597,6 +618,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C152881F24F969F900C7F85C /* SwiftyImageIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyImageIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C1C319E824F6C314008DF177 /* Project object */;
 }

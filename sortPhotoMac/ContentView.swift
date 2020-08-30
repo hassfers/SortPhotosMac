@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import SwiftyImageIO
+
 
 struct ContentView: View {
     @State var files: [URL] = []
@@ -23,7 +25,6 @@ struct ContentView: View {
                                 let data = item as? Data,
                                 let url = URL(dataRepresentation: data, relativeTo: nil)
                                 else { return }
-                            //                            self.files.append(url)
                             self.files.append(contentsOf: self.parseFileURLRecursive(url: url))
                         }
                     }
@@ -39,22 +40,23 @@ struct ContentView: View {
             }
             List(files,id: \.self){ file in
                 Text("\(file)")
+                Text("\(DateFormatter.parseEXIFDate(from: Photo.loadDateString(for: file)) ?? Date())")
+                    Text("\(Photo.getLastModifiedDate(for: file) ?? Date())")
                 if NSImage(contentsOfFile: file.path) != nil {
                     Image(nsImage: NSImage(contentsOfFile: file.path)!)
                         .resizable()
                         .scaledToFit()
+                        .frame(maxHeight:100)
                 }
-                //                Image(nsImage: NSImage(contentsOfFile: file.path)!)
-                //                    .resizable()
-                //                    .scaledToFit()
+                Divider()
             }
         }
     }
-    
+
     func parseFileURLRecursive(url: URL) ->  [URL] {
         guard url.isFileURL else { return [] }
         var urls: [URL] = []
-        
+
         if url.hasDirectoryPath {
             do {
                 let items = try FileManager.default.contentsOfDirectory(atPath: url.path)
@@ -81,5 +83,11 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(files: [])
+    }
+}
+
+extension Optional where Wrapped == String {
+    var isEmpty: Bool {
+        return (self ?? "").isEmpty
     }
 }
