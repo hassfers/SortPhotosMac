@@ -65,7 +65,9 @@ struct ContentView: View {
                     if url2.hasDirectoryPath {
                         urls.append(contentsOf: parseFileURLRecursive(url: url2))
                     } else {
-                        urls.append(url2)
+                        if NSItemProvider(contentsOf: url2)?.hasItemConformingToTypeIdentifier("public.image") ?? false {
+                            urls.append(url2)
+                        }
                     }
                 }
             } catch {
