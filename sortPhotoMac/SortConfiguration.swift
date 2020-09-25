@@ -13,4 +13,5 @@ struct SortConfiguration {
     let subDictionaryDay: Bool
     let renameFile: Bool
     let rootPath: String
+    let copyInsteadOfMove: Bool
 }

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C13E4D9124FBDC720062B8C2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = C13E4D9024FBDC720062B8C2 /* Kingfisher */; };
+		C13E4D9324FBDC720062B8C2 /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C13E4D9224FBDC720062B8C2 /* KingfisherSwiftUI */; };
+		C13E4D9524FBE7410062B8C2 /* SortConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13E4D9424FBE7410062B8C2 /* SortConfiguration.swift */; };
 		C152882024F969F900C7F85C /* SwiftyImageIO in Frameworks */ = {isa = PBXBuildFile; productRef = C152881F24F969F900C7F85C /* SwiftyImageIO */; };
 		C152882224FA54E200C7F85C /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C152882124FA54E200C7F85C /* Photo.swift */; };
 		C1C319F424F6C314008DF177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C319F324F6C314008DF177 /* AppDelegate.swift */; };
@@ -36,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C13E4D9424FBE7410062B8C2 /* SortConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortConfiguration.swift; sourceTree = "<group>"; };
 		C152881E24F969EF00C7F85C /* SwiftyImageIO */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SwiftyImageIO; path = ../SwiftyImageIO; sourceTree = "<group>"; };
 		C152882124FA54E200C7F85C /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		C1C319F024F6C314008DF177 /* sortPhotoMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sortPhotoMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +63,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13E4D9324FBDC720062B8C2 /* KingfisherSwiftUI in Frameworks */,
+				C13E4D9124FBDC720062B8C2 /* Kingfisher in Frameworks */,
 				C152882024F969F900C7F85C /* SwiftyImageIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +120,7 @@
 			children = (
 				C1C319F324F6C314008DF177 /* AppDelegate.swift */,
 				C1C319F524F6C314008DF177 /* ContentView.swift */,
+				C13E4D9424FBE7410062B8C2 /* SortConfiguration.swift */,
 				C152882124FA54E200C7F85C /* Photo.swift */,
 				C1C319F724F6C316008DF177 /* Assets.xcassets */,
 				C1C319FC24F6C316008DF177 /* Main.storyboard */,
@@ -168,6 +175,8 @@
 			name = sortPhotoMac;
 			packageProductDependencies = (
 				C152881F24F969F900C7F85C /* SwiftyImageIO */,
+				C13E4D9024FBDC720062B8C2 /* Kingfisher */,
+				C13E4D9224FBDC720062B8C2 /* KingfisherSwiftUI */,
 			);
 			productName = sortPhotoMac;
 			productReference = C1C319F024F6C314008DF177 /* sortPhotoMac.app */;
@@ -242,6 +251,7 @@
 			);
 			mainGroup = C1C319E724F6C314008DF177;
 			packageReferences = (
+				C13E4D8F24FBDC720062B8C2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = C1C319F124F6C314008DF177 /* Products */;
 			projectDirPath = "";
@@ -288,6 +298,7 @@
 			files = (
 				C152882224FA54E200C7F85C /* Photo.swift in Sources */,
 				C1C319F624F6C314008DF177 /* ContentView.swift in Sources */,
+				C13E4D9524FBE7410062B8C2 /* SortConfiguration.swift in Sources */,
 				C1C319F424F6C314008DF177 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -619,7 +630,28 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		C13E4D8F24FBDC720062B8C2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		C13E4D9024FBDC720062B8C2 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C13E4D8F24FBDC720062B8C2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		C13E4D9224FBDC720062B8C2 /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C13E4D8F24FBDC720062B8C2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
 		C152881F24F969F900C7F85C /* SwiftyImageIO */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftyImageIO;

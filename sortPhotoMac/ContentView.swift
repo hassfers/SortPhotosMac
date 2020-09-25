@@ -20,6 +20,7 @@ struct ContentView: View {
     @State var subDictionaryMonth: Bool = false
     @State var subDictionaryDay: Bool = false
     @State var renameFile: Bool = false
+    @State var copyInsteadOfMove: Bool = false
     @State var currentFileNumber: Int = 0
 
     var body: some View {
@@ -62,6 +63,9 @@ struct ContentView: View {
                     Toggle(isOn: $renameFile) {
                         Text("rename file to dateString")
                     }
+                    Toggle(isOn: $copyInsteadOfMove) {
+                        Text("copy file instead of move")
+                    }
                 }
                 HStack{
                     Button("Clear"){
@@ -76,7 +80,8 @@ struct ContentView: View {
                                                            subDictionaryMonth: self.subDictionaryMonth,
                                                            subDictionaryDay: self.subDictionaryDay,
                                                            renameFile: self.renameFile,
-                                                           rootPath: self.outputRootPath)
+                                                           rootPath: self.outputRootPath,
+                                                           copyInsteadOfMove: self.copyInsteadOfMove)
 
                             self.photos = self.files.map {
                                 let photo = Photo(fileUrl: $0)
@@ -89,9 +94,15 @@ struct ContentView: View {
                     }.disabled(outputRootPath.isEmpty || files.isEmpty)
                     Button("write to disk"){
                         self.isRunning = true
+                        self.currentFileNumber = 0
                         DispatchQueue.main.async {
                         self.photos.forEach { photo in
+                            if self.copyInsteadOfMove {
+                                try? photo.copyToNewLocation()
+                            } else {
                                 try? photo.moveToNewLocation()
+                            }
+                            self.currentFileNumber += 1
                             }
                             self.isRunning = false
                         }
