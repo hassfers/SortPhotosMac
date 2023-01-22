@@ -10,19 +10,21 @@ import SwiftUI
 import SwiftyImageIO
 import KingfisherSwiftUI
 
+
 struct ContentView: View {
     @State var files: [URL] = []
     @State var photos: [Photo] = []
     @State var outputRootPath: String = ""
     @State var isRunning: Bool = false
-
+    
     @State var subDictionaryYear: Bool = true
     @State var subDictionaryMonth: Bool = false
     @State var subDictionaryDay: Bool = false
     @State var renameFile: Bool = false
     @State var copyInsteadOfMove: Bool = false
+    @State var reverseWhatsApp: Bool = false
     @State var currentFileNumber: Int = 0
-
+    
     var body: some View {
         ZStack{
             VStack{
@@ -35,7 +37,7 @@ struct ContentView: View {
                                 guard
                                     let data = item as? Data,
                                     let url = URL(dataRepresentation: data, relativeTo: nil)
-                                    else { return }
+                                else { return }
                                 self.files.append(contentsOf: self.parseFileURLRecursive(url: url))
                             }
                         }
@@ -46,7 +48,7 @@ struct ContentView: View {
                 Text("\(photos.count) pictures scanned and sorted")
                 Text("\(isRunning ? "running \(currentFileNumber)" : "stopped")")
                 RootFilePathView(filePath: $outputRootPath)
-
+                
                 VStack {
                     Text("Subdictionaries")
                     HStack{
@@ -66,6 +68,9 @@ struct ContentView: View {
                     Toggle(isOn: $copyInsteadOfMove) {
                         Text("copy file instead of move")
                     }
+                    Toggle(isOn: $reverseWhatsApp) {
+                        Text("reverse Whatsapp Photos")
+                    }
                 }
                 HStack{
                     Button("Clear"){
@@ -82,10 +87,14 @@ struct ContentView: View {
                                                            renameFile: self.renameFile,
                                                            rootPath: self.outputRootPath,
                                                            copyInsteadOfMove: self.copyInsteadOfMove)
-
+                            
                             self.photos = self.files.map {
                                 let photo = Photo(fileUrl: $0)
-                                photo.generateNewPath(config: config)
+                                if(reverseWhatsApp) {
+                                    photo.reverseWhatsappTimestamp()
+                                } else {
+                                    photo.generateNewPath(config: config)
+                                }
                                 self.currentFileNumber += 1
                                 return photo
                             }
@@ -95,31 +104,46 @@ struct ContentView: View {
                     Button("write to disk"){
                         self.isRunning = true
                         self.currentFileNumber = 0
-                        DispatchQueue.main.async {
-                        self.photos.forEach { photo in
-                            if self.copyInsteadOfMove {
-                                try? photo.copyToNewLocation()
-                            } else {
-                                try? photo.moveToNewLocation()
-                            }
-                            self.currentFileNumber += 1
+                        if (reverseWhatsApp) {
+                            photos.forEach { photo in
+                                photo.writeDateToExifData(date: photo.dateTime!)
                             }
                             self.isRunning = false
+                        } else {
+                            
+                            
+                            
+                            DispatchQueue.main.async {
+                                self.photos.forEach { photo in
+                                    if self.copyInsteadOfMove {
+                                        try? photo.copyToNewLocation()
+                                    } else {
+                                        try? photo.moveToNewLocation()
+                                    }
+                                    self.currentFileNumber += 1
+                                }
+                                self.isRunning = false
+                            }
+                            
                         }
                     }.disabled(photos.isEmpty)
                 }
-
+                
                 List(files, id: \.self){ file in
-                    Text("\(file)")
-                    Text("\(DateFormatter.parseEXIFDate(from: Photo.loadDateString(for: file)) ?? Date())")
+                    VStack(alignment: .leading){
+                        Text("\(file)")
+                        Text("\(DateFormatter.parseEXIFDate(from: Photo.loadDateString(for: file)) ?? Date())")
+                        
+                    }
                 }
                 Divider()
                 List(photos, id: \.self){ photo in
-                    Text("\(photo.processed.text)")
-                    Text("\(photo.fileUrl)")
-                    Text("\(photo.urlAfterSorting?.path ?? "")")
-                    Text("\(photo.dateTime ?? Date())")
-                }
+                    VStack(alignment: .leading){
+                        Text("\(photo.processed.text)")
+                        Text("\(photo.fileUrl)")
+                        Text("\(photo.urlAfterSorting?.path ?? "")")
+                        Text("\(photo.dateTime ?? Date())")
+                    }}
             }
             .blur(radius: isRunning ? 0.5 : 0, opaque: false )
             .disabled(isRunning)
@@ -129,11 +153,11 @@ struct ContentView: View {
             }
         }
     }
-
+    
     func parseFileURLRecursive(url: URL) ->  [URL] {
         guard url.isFileURL else { return [] }
         var urls: [URL] = []
-
+        
         if url.hasDirectoryPath {
             do {
                 let items = try FileManager.default.contentsOfDirectory(atPath: url.path)
@@ -156,14 +180,14 @@ struct ContentView: View {
         }
         return urls
     }
-
+    
 }
 
 struct ProgressIndicator: NSViewRepresentable {
-
+    
     typealias TheNSView = NSProgressIndicator
     var configuration = { (view: TheNSView) in }
-
+    
     func makeNSView(context: NSViewRepresentableContext<ProgressIndicator>) -> NSProgressIndicator {
         let view = TheNSView()
         view.controlTint = .blueControlTint
@@ -172,7 +196,7 @@ struct ProgressIndicator: NSViewRepresentable {
         view.startAnimation(nil)
         return view
     }
-
+    
     func updateNSView(_ nsView: NSProgressIndicator, context: NSViewRepresentableContext<ProgressIndicator>) {
         configuration(nsView)
     }
@@ -198,14 +222,14 @@ struct RootFilePathView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
             Button("Open ... "){
                 let dialog = NSOpenPanel();
-
+                
                 dialog.title                   = "Choose a dictionary";
                 dialog.showsResizeIndicator    = true;
                 dialog.showsHiddenFiles        = false;
                 dialog.canChooseDirectories    = true;
                 dialog.canCreateDirectories    = true;
                 dialog.allowsMultipleSelection = false;
-
+                
                 if (dialog.runModal() == NSApplication.ModalResponse.OK) {
                     let result = dialog.url // Pathname of the file
                     if result?.hasDirectoryPath ?? false {

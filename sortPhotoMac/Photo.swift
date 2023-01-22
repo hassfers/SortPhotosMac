@@ -13,7 +13,7 @@ import SwiftUI
 
 class Photo {
     let fileUrl: URL
-    let dateTime: Date?
+    var dateTime: Date?
     var urlAfterSorting: URL? = nil
     var selected: Bool = true
     var processed: FinishedType = .notProcessed
@@ -102,6 +102,65 @@ class Photo {
         return url
     }
     
+    func reverseWhatsappTimestamp(){
+        self.dateTime = createDataFromPath()
+        self.dateTime = dateTime?.addingTimeInterval((12 * 60 * 60))
+//        writeDateToExifData(date: dateTime!)
+    }
+    
+    func writeDateToExifData(date: Date) {
+//        let source = ImageSource(url: fileUrl, options: nil)
+//        guard var properties = source?.propertiesForImage() else {
+//            return
+//        }
+////        let properties2 = PhotoPropterties(RawCFValues(dictionaryLiteral: (kCGImagePropertyExifDateTimeOriginal, dateTime as AnyObject)))
+////        properties.add(properties2)
+//
+//
+////        return  properties.get(PhotoPropterties.self)?.dateTime ??
+////            properties.get(TIFFImageProperties.self)?.dateTime ??
+//
+////        sav
+        ///eMetadata(<#T##data: NSDictionary##NSDictionary#>, toFile: fileUrl)
+        
+        let myDateObject = NSDate()       // NSDate()  is todays date
+
+        let attributes = [FileAttributeKey.creationDate: date, FileAttributeKey.modificationDate:date]
+
+        do {
+            if #available(macOS 13.0, *) {
+                try FileManager.default.setAttributes(attributes, ofItemAtPath: fileUrl.path)
+            } else {
+                // Fallback on earlier versions
+            }
+          }
+          catch
+          {
+                print(error)
+          }
+        
+    }
+    
+    
+    func saveMetadata(_ data:NSDictionary, toFile url:URL) {
+            // Add metadata to imageData
+            guard let source = CGImageSourceCreateWithURL(url as CFURL, nil),
+                let uniformTypeIdentifier = CGImageSourceGetType(source) else { return }
+            
+            guard let destination = CGImageDestinationCreateWithURL(url as CFURL, uniformTypeIdentifier, 1, nil) else { return }
+            CGImageDestinationAddImageFromSource(destination, source, 0, data)
+            guard CGImageDestinationFinalize(destination) else { return }
+        }
+    
+    func createDataFromPath() -> Date? {
+        guard let index = fileUrl.lastPathComponent.lastIndex(of: "W")
+              else {
+            print("error processing file: \(fileUrl)")
+            return nil }
+        let dateSting = fileUrl.lastPathComponent[..<index]
+       return DateFormatter.whatsappFileFormater.date(from: String(dateSting))
+    }
+    
     func addVersionCounter(to url: URL, counter: Int) -> URL {
         var newUrl = url
         let fileExtension = url.pathExtension
@@ -124,6 +183,8 @@ class Photo {
             properties.get(TIFFImageProperties.self)?.dateTime ??
         nil
     }
+    
+
     
     static func getLastModifiedDate(for url: URL) -> Date? {
         let fileManager = FileManager.default
@@ -175,6 +236,12 @@ extension DateFormatter {
         return dateFormatter
     }
     
+    static var whatsappFileFormater: DateFormatter {
+        dateFormatter.locale = Locale(identifier: "de_DE")
+        dateFormatter.dateFormat = "'IMG'-yyyyMMdd-"
+        return dateFormatter
+    }
+    
     static func parseEXIFDate(from string: String?) -> Date? {
         guard let string = string else { return nil }
         return exifFormater.date(from: string)
@@ -206,5 +273,11 @@ extension DateFormatter {
         dateFormatter.locale = Locale(identifier: "de_DE")
         dateFormatter.dateFormat = "yyyy-MM-dd_HH-mm-ss"
         return dateFormatter.string(from: date)
+    }
+}
+
+struct Photo_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
