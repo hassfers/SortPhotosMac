@@ -108,7 +108,8 @@ class Photo {
 //        writeDateToExifData(date: dateTime!)
     }
     
-    func writeDateToExifData(date: Date) {
+    func writeDateToExifData(date: Date?) {
+        guard let date = date else {return}
 //        let source = ImageSource(url: fileUrl, options: nil)
 //        guard var properties = source?.propertiesForImage() else {
 //            return
@@ -123,7 +124,6 @@ class Photo {
 ////        sav
         ///eMetadata(<#T##data: NSDictionary##NSDictionary#>, toFile: fileUrl)
         
-        let myDateObject = NSDate()       // NSDate()  is todays date
 
         let attributes = [FileAttributeKey.creationDate: date, FileAttributeKey.modificationDate:date]
 

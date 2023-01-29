@@ -106,7 +106,7 @@ struct ContentView: View {
                         self.currentFileNumber = 0
                         if (reverseWhatsApp) {
                             photos.forEach { photo in
-                                photo.writeDateToExifData(date: photo.dateTime!)
+                                photo.writeDateToExifData(date: photo.dateTime)
                             }
                             self.isRunning = false
                         } else {
