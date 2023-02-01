@@ -100,7 +100,7 @@ struct ContentView: View {
                             }
                             self.isRunning = false
                         }
-                    }.disabled(outputRootPath.isEmpty || files.isEmpty)
+                    }.disabled(outputRootPath.isEmpty || files.isEmpty )
                     Button("write to disk"){
                         self.isRunning = true
                         self.currentFileNumber = 0
